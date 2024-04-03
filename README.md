@@ -1,13 +1,6 @@
 # AppiumTestFramework 
 This has been developed for mobile testing and can be expanded according to needs and testing purposes
 
-You can execute test from command line using:
-- mvn clean test
-
-Aslo using command line you can run tests 
-and set some configuration variable (e.g IP-addess):
-- mvn clean test -DipAddress={your address}
-
 Technologies/Tools used in building the framework
 =================================================
 - IntelliJ - IDE
@@ -22,5 +15,16 @@ Technologies/Tools used in building the framework
 - JSON - Test Data
 - XML - Static text
 - GitHub - Version control
+
+  
+You can execute test from command line using:
+- mvn clean test
+
+Aslo using command line you can run tests 
+and set some configuration variable (e.g IP-addess):
+- mvn clean test -DipAddress={your address}
+
+After execution of the scripts framework will provide you cucumber report in ease to understand view: (/Cucumber Report.png)
+
 
 
