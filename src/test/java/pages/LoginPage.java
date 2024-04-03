@@ -1,7 +1,7 @@
 package pages;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.qameta.allure.Step;
@@ -12,7 +12,7 @@ import utils.AndroidActions;
 import java.time.Duration;
 
 public class LoginPage extends AndroidActions {
-    AndroidDriver driver;
+    AppiumDriver driver;
 
     @AndroidFindBy(className = "android.widget.Button")
     private WebElement logInButton;
@@ -26,7 +26,7 @@ public class LoginPage extends AndroidActions {
     @AndroidFindBy(className = "android.widget.ImageView")
     private WebElement logoImg;
 
-    public LoginPage(AndroidDriver driver) {
+    public LoginPage(AppiumDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
@@ -38,13 +38,11 @@ public class LoginPage extends AndroidActions {
     public void setUsernameAndPasswordValue(String username, String password) {
         usernameField.sendKeys(username);
         passwordField.sendKeys(password);
-        driver.hideKeyboard();
     }
 
     @Step("Set username")
     public void setUsernameValue(String username) {
         usernameField.sendKeys(username);
-        driver.hideKeyboard();
     }
 
     @Step("Get username")
@@ -55,7 +53,6 @@ public class LoginPage extends AndroidActions {
     @Step("Set password")
     public void setPasswordValue(String password) {
         passwordField.sendKeys(password);
-        driver.hideKeyboard();
     }
 
     @Step("Get password")
@@ -86,8 +83,6 @@ public class LoginPage extends AndroidActions {
     @Step("Click on Login button")
     public void clickLogin() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.className("android.widget.Button")));
-
-//        wait.until(ExpectedConditions.visibilityOf(logInButton));
         logInButton.click();
     }
 

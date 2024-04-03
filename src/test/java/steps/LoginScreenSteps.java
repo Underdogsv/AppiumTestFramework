@@ -1,16 +1,16 @@
 package steps;
 
+import driver.TestInit;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
-import driver.AppiumTestInit;
 
 import static common.Constants.ENTER_USERNAME_OR_PASSWORD_MESSAGE;
 import static common.Constants.INVALID_CREDENTIALS;
 
-public class LoginScreenSteps extends AppiumTestInit {
+public class LoginScreenSteps extends TestInit {
     private static final Logger logger = LogManager.getLogger(LoginScreenSteps.class);
 
     @And("^Enter \"([^\"]*)\" to username and \"([^\"]*)\" to password fields on the login screen$")

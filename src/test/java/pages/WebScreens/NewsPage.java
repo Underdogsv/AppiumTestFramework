@@ -1,6 +1,6 @@
 package pages.WebScreens;
 
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
@@ -11,8 +11,7 @@ import utils.AndroidActions;
 import java.time.Duration;
 
 public class NewsPage extends AndroidActions {
-
-    AndroidDriver driver;
+    AppiumDriver driver;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='login']")
     private WebElement loginButtonElement;
@@ -20,10 +19,7 @@ public class NewsPage extends AndroidActions {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='logout']")
     private WebElement logOutElement;
 
-
-
-
-    public NewsPage(AndroidDriver driver) {
+    public NewsPage(AppiumDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);

@@ -1,27 +1,25 @@
 package pages;
 
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.AndroidActions;
 
 import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Optional;
 
 public class MainPage extends AndroidActions {
-    AndroidDriver driver;
+    AppiumDriver driver;
 
     @AndroidFindBy(xpath = "//android.widget.TextView")
     private List<WebElement> menuItemsList;
 
-    public MainPage(AndroidDriver driver) {
+    public MainPage(AppiumDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
@@ -48,7 +46,7 @@ public class MainPage extends AndroidActions {
     public void selectMainMenuItemByText(String text) {
         try {
             getMainMenuItemByText(text).click();
-        } catch (NoSuchElementException e) {
+        } catch (NoSuchElementException  | NullPointerException e) {
             e.printStackTrace();
         }
     }

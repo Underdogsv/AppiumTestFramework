@@ -1,35 +1,34 @@
 package steps;
 
+import driver.TestInit;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.assertj.core.api.Assertions;
 import pages.*;
-import driver.AppiumTestInit;
 
 import static common.Constants.DOUBLE_TAP_SUCCESSFUL;
 
-public class MainScreenSteps extends AppiumTestInit {
+public class MainScreenSteps extends TestInit {
     //TODO  refactor that
     DragAndDropPage dragAndDropPage = new DragAndDropPage(driver);
     LongPressPage longPressPage = new LongPressPage(driver);
     CarouselPage carouselPage = new CarouselPage(driver);
     WheelPickerPage wheelPickerPage = new WheelPickerPage(driver);
+    DoubleTapPage doubleTapPage = new DoubleTapPage(driver);
+    MainPage mainPage = new MainPage(driver);
 
     @Then("^Verify that the title is displayed on main screen$")
     public void verifyThatTitleIsDisplayedOnMainScreen() {
-        MainPage mainPage = new MainPage(driver);
-        Assertions.assertThat(mainPage.isMenuTitleDisplayed()).isTrue();;
+        Assertions.assertThat(mainPage.isMenuTitleDisplayed()).isTrue();
     }
 
     @And("^Select \"([^\"]*)\" menu item on main screen$")
     public void selectMenuItemOnMainScreen(String menuItem) {
-        MainPage mainPage = new MainPage(driver);
         mainPage.selectMainMenuItemByText(menuItem);
     }
 
     @And("^Perform double tap on the button$")
     public void performDoubleTapByButton() {
-        DoubleTapPage doubleTapPage = new DoubleTapPage(driver);
         doubleTapPage.performDoubleTapByButton();
     }
 
@@ -40,7 +39,6 @@ public class MainScreenSteps extends AppiumTestInit {
 
     @And("Scroll Menu List down")
     public void scrollDownMenuList() {
-        MainPage mainPage = new MainPage(driver);
         mainPage.scrollPageDown();
     }
 
@@ -60,7 +58,6 @@ public class MainScreenSteps extends AppiumTestInit {
 
     @Then("^Verify that the pop up message about success is displayed$")
     public void verifyThatDoubleTapSuccessfulIsDisplayedOnMainScreen() {
-        DoubleTapPage doubleTapPage = new DoubleTapPage(driver);
         String popupText = doubleTapPage.getPopUpMessage();
         Assertions.assertThat(popupText).isEqualTo(DOUBLE_TAP_SUCCESSFUL);
     }

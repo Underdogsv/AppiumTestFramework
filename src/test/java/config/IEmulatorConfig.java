@@ -26,6 +26,12 @@ public interface IEmulatorConfig extends Config {
     @Key("browser")
     String browser();
 
+    @Key("udid")
+    int udid();
+
+    @Key("deviceType")
+    String deviceType();
+
     @Key("ipAddress")
     String ipAddress();
 

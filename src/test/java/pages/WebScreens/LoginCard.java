@@ -1,6 +1,6 @@
 package pages.WebScreens;
 
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
@@ -12,7 +12,7 @@ import java.time.Duration;
 /* LoginCard is a part of Authorisation screen*/
 public class LoginCard extends AuthorizationPage {
 
-    AndroidDriver driver;
+    AppiumDriver driver;
 
     @AndroidFindBy(xpath = "(//android.view.View[3]//android.view.View[2]/android.widget.EditText)[1]")
     private WebElement usernameField;
@@ -28,7 +28,7 @@ public class LoginCard extends AuthorizationPage {
     private WebElement errorMessage;
 
 
-    public LoginCard(AndroidDriver driver) {
+    public LoginCard(AppiumDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);

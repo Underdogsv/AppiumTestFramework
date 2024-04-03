@@ -1,5 +1,6 @@
 package steps;
 
+import driver.TestInit;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import objects.CredentialObject;
@@ -7,11 +8,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
 import pages.WebScreens.*;
-import driver.AppiumTestInit;
 
 import static common.Constants.BAD_LOGIN;
 
-public class WebFunctionalitySteps extends AppiumTestInit {
+public class WebFunctionalitySteps extends TestInit {
     private static final Logger logger = LogManager.getLogger(WebFunctionalitySteps.class);
     LoginCard loginCard = new LoginCard(driver);
     RegistrationCard registrationCard = new RegistrationCard(driver);
@@ -84,7 +84,6 @@ public class WebFunctionalitySteps extends AppiumTestInit {
                 throw new UnsupportedOperationException();
         }
     }
-
 
     @And("^Click (Create Account) button on ([^\\\"]*)$")
     public void clickCreateAccountOnLoginPage(String firstParameter, String secondParameter) {

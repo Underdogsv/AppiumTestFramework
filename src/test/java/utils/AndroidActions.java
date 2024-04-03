@@ -2,7 +2,7 @@ package utils;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class AndroidActions {
-    AndroidDriver driver;
+    AppiumDriver driver;
     protected WebDriverWait wait;
 
     @AndroidFindBy(id = "android:id/message")
@@ -22,7 +22,7 @@ public class AndroidActions {
     @AndroidFindBy(id = "android:id/button1")
     private WebElement androidPopUpOkButtonElement;
 
-    public AndroidActions(AndroidDriver driver) {
+    public AndroidActions(AppiumDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
