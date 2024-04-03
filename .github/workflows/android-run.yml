@@ -4,7 +4,7 @@ on: push
 
 jobs:
   run-mobile-tests:
-    runs-on: windows-2019
+    runs-on: ubuntu-22.04
 
     steps:
       - name: setup java
