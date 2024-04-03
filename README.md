@@ -29,7 +29,7 @@ You can execute test from command line using:
 
 Or in case below you will execute Cucumber runner with retry suit which rerun failed scenarios)
 - mvn test -DxmlFilePath=TestNG  
-- 
+
 Aslo using command line you can run tests 
 and set some configuration variable (e.g deviceName, IP-address, port,):
 - mvn clean test -DipAddress={your address}

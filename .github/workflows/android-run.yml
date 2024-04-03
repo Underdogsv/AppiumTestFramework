@@ -8,7 +8,7 @@ jobs:
 
     steps:
       -name: pull the project into the runner
-        uses: actions/chechout@v3
+        uses: actions/checkout@v3
 
         -name: setup appium
           run: |
