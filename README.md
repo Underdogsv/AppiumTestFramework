@@ -15,6 +15,7 @@ Technologies/Tools used in building the framework
 - JSON - Test Data
 - Gson - Convert Java Objects into their JSON
 - GitHub - Version control
+- JavaFaker - test data generation
   
 Design patterns used in the framework
 =================================================
@@ -26,8 +27,11 @@ Design patterns used in the framework
 You can execute test from command line using:
 - mvn clean test
 
+Or in case below you will execute Cucumber runner with retry suit which rerun failed scenarios)
+- mvn test -DxmlFilePath=TestNG  
+- 
 Aslo using command line you can run tests 
-and set some configuration variable (e.g deviceName, IP-addess, port,):
+and set some configuration variable (e.g deviceName, IP-address, port,):
 - mvn clean test -DipAddress={your address}
 
 After execution of the scripts framework will provide you cucumber report in ease to understand view:

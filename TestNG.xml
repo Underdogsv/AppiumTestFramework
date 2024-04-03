@@ -4,11 +4,12 @@
     <test  name="Cucumber with TestNG Test">
         <classes>
             <class name="runner.CucumberRunnerTests"/>
-        </classes>
-    </test>
-    <test  name="Rerun failed tests">
-        <classes>
             <class name="runner.FailedTestRunner"/>
         </classes>
     </test>
+<!--    <test  name="Rerun failed tests">-->
+<!--        <classes>-->
+<!--            <class name="runner.FailedTestRunner"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
