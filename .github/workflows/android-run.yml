@@ -7,6 +7,12 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      - name: setup java
+      - steps:
+          - uses: actions/setup-java@v4
+            with:
+              distribution: 'temurin'
+              java-version: '11'
       - name: pull the project into the runner
         uses: actions/checkout@v3
 
