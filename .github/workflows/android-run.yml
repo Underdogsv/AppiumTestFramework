@@ -1,0 +1,23 @@
+name: run android tests in github runner
+
+on: push
+
+jobs:
+  run-mobile-tests:
+    runs-on: windows-latest
+
+    steps:
+      -name: pull the project into the runner
+        uses: actions/chechout@v3
+
+        -name: setup appium
+          run: |
+            npm install -g appium@v2.0.0
+            appium -v
+            appium &>/dev/null &
+
+       - name: run Appium tests
+         uses: reactivecircus/android-emulator-runner@v2
+         with:
+             api-level: 29
+             script: mvn test -DxmlFilePath=TestNG
