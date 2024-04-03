@@ -24,7 +24,7 @@ Aslo using command line you can run tests
 and set some configuration variable (e.g IP-addess):
 - mvn clean test -DipAddress={your address}
 
-After execution of the scripts framework will provide you cucumber report in ease to understand view: (/Cucumber%20Report.png)
+After execution of the scripts framework will provide you cucumber report in ease to understand view: (/CucumberReport.png)
 
 
 
