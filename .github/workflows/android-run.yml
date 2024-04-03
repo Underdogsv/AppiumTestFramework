@@ -10,11 +10,11 @@ jobs:
       - name: pull the project into the runner
         uses: actions/checkout@v3
 
-          - name: setup appium
-            run: |
-              npm install -g appium@2.0.0
-              appium -v
-              appium &>/dev/null &
+      - name: setup appium
+        run: |
+          npm install -g appium@2.0.0
+          appium -v
+          appium &>/dev/null &
 
       - name: run Appium tests
         uses: reactivecircus/android-emulator-runner@v2
