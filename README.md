@@ -1,5 +1,5 @@
 # AppiumTestFramework 
-This has been developed for mobile testing and can be expanded according to needs and testing purposes
+This framework has been developed for mobile testing and can be expanded according to needs and testing purposes
 
 ## Before you start the following configurations should be completed:
 - Download Java
@@ -33,7 +33,7 @@ Design patterns used in the framework
 - DDT - Application behaviour verification using generated test data 
   
 
-You can execute test from command line using:
+You can execute tests from command line using:
 - mvn clean test
 
 Or in case below you will execute Cucumber runner with retry suit which rerun failed scenarios)
