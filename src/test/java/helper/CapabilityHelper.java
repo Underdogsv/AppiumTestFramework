@@ -48,11 +48,11 @@ public class CapabilityHelper {
 
         options.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
         options.setCapability("deviceName", DEVICE_NAME);
-        options.setCapability("platformName", PLATFORM_NAME);
         options.setCapability("appPackage", APP_PACKAGE);
         options.setCapability("appActivity", APP_ACTIVITY);
+        //        options.setCapability("platformName", PLATFORM_NAME);
+        options.setCapability("platformName", "ANDROID");
         options.setCapability("automationName", AutomationName.ANDROID_UIAUTOMATOR2);
-//        options.setCapability("automationName", "Flutter");
         options.setCapability("app", appiumChallengeApk);
         return options;
     }

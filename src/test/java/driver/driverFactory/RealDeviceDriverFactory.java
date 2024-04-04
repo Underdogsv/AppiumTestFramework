@@ -11,8 +11,8 @@ public class RealDeviceDriverFactory implements AppiumDriverFactory {
     public AppiumDriver createDriver(){
         String platformName = ConfigReader.emulatorConfig.platformName();
         String deviceType = ConfigReader.emulatorConfig.deviceType();
-//        UiAutomator2Options options = new CapabilityHelper().configureCapabilityOptions();
-        DesiredCapabilities options = new CapabilityHelper().getDesiredCapabilitiesOptions();
+        UiAutomator2Options options = new CapabilityHelper().configureCapabilityOptions();
+//        DesiredCapabilities options = new CapabilityHelper().getDesiredCapabilitiesOptions();
         if (platformName.equalsIgnoreCase("android")){
             return new AndroidDriver(options);
         }else if (platformName.equalsIgnoreCase("iOs")){

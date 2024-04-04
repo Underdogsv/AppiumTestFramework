@@ -14,9 +14,9 @@ public class EmulatorDriverFactory  implements AppiumDriverFactory {
       public AppiumDriver createDriver(){
           String platformName = ConfigReader.emulatorConfig.platformName();
 //          AppiumDriverLocalService localServer = new AppiumServerHelper().startAppiumServer();
-//          UiAutomator2Options options = new CapabilityHelper().configureCapabilityOptions();
+          UiAutomator2Options options = new CapabilityHelper().configureCapabilityOptions();
           AppiumServiceBuilder remoteServer = new AppiumServerHelper().startAppiumServiceBuilder();
-          DesiredCapabilities options = new CapabilityHelper().getDesiredCapabilitiesOptions();
+//          DesiredCapabilities options = new CapabilityHelper().getDesiredCapabilitiesOptions();
           if (platformName.equalsIgnoreCase("android")){
 
               return new AndroidDriver(remoteServer, options);
