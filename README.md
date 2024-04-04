@@ -1,6 +1,15 @@
 # AppiumTestFramework 
 This has been developed for mobile testing and can be expanded according to needs and testing purposes
 
+## Before you start the following configurations should be completed:
+- Download Java
+- Install Android Studio and set Android SDK path
+- Download Node
+- Set Java,Android SDK and Node) Home path on Windows/Mac variables.
+- Configure Emulator in Android Studio
+- Install and start Appium server
+
+
 Technologies/Tools used in building the framework
 =================================================
 - IntelliJ - IDE
