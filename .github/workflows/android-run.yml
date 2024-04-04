@@ -16,9 +16,6 @@ jobs:
       - name: pull the project into the runner
         uses: actions/checkout@v3
         
-      - name: Appium Server Action
-        uses: moatazeldebsy/Appium-Server-GitHub-Action@V1.0.7
-          
       - name: setup appium
         run: |
           npm install -g appium@2.0.0
