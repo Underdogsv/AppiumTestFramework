@@ -12,24 +12,9 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '11'
-            - run: |
-                cwd=$(pwd)
-                pushd "$cwd"
-                cd ~
-                appium driver install --source=local "$cwd"
-                appium driver doctor uiautomator2
-                nohup appium server \
-                  --port=$APPIUM_TEST_SERVER_PORT \
-                  --address=$APPIUM_TEST_SERVER_HOST \
-                  --relaxed-security \
-                  --log-no-colors \
-                  --log-timestamp \
-                  2>&1 > "$cwd/appium.log" &
-                popd
 
       - name: pull the project into the runner
         uses: actions/checkout@v3
-        
       - name: setup appium
         run: |
           npm install -g appium@2.0.0
@@ -41,3 +26,9 @@ jobs:
         with:
           api-level: 29
           script: mvn test -DxmlFilePath=TestNG
+      - name: Save server output
+          if: ${{ always() }}
+          uses: actions/upload-artifact@master
+          with:
+            name: appium-api${{ matrix.apiLevel }}
+            path: appium.log
