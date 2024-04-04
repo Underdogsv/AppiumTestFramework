@@ -4,8 +4,8 @@ import driver.TestInit;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import objects.CredentialObject;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.assertj.core.api.Assertions;
 import pages.WebScreens.*;
 

@@ -4,9 +4,8 @@ import driver.TestInit;
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class CommonSteps extends TestInit{
     private static final Logger logger = LogManager.getLogger(CommonSteps.class);
