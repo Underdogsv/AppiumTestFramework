@@ -4,6 +4,10 @@ import config.ConfigReader;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 
 public class AppiumServerHelper {
     private static String IP_ADDRESS = ConfigReader.emulatorConfig.ipAddress();
@@ -19,9 +23,19 @@ public class AppiumServerHelper {
         return localService;
     }
 
+    public static AppiumServiceBuilder startAppiumServiceBuilder(){
+        AppiumServiceBuilder service =
+                new AppiumServiceBuilder()
+//                        .withAppiumJS(new File("C:/Users/Stanislav/AppData/Roaming/npm/node_modules/appium/build/lib/main.js"))
+                        .withIPAddress(IP_ADDRESS).usingPort(PORT);
+        return service;
+    }
+
     private static void initialAppiumServiceBuilder() {
         AppiumServiceBuilder service =
-                new AppiumServiceBuilder().withIPAddress(IP_ADDRESS).usingPort(PORT);
+                new AppiumServiceBuilder()
+                        .withAppiumJS(new File("C:/Users/Stanislav/AppData/Roaming/npm/node_modules/appium/build/lib/main.js"))
+                        .withIPAddress(IP_ADDRESS).usingPort(PORT);
         localService = AppiumDriverLocalService.buildService(service);
         localService.start();
     }
