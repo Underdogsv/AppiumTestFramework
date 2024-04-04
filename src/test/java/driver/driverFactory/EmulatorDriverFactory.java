@@ -12,7 +12,7 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 public class EmulatorDriverFactory  implements AppiumDriverFactory {
       public AppiumDriver createDriver(){
           String platformName = ConfigReader.emulatorConfig.platformName();
-          AppiumDriverLocalService localServer = new AppiumServerHelper().startAppiumServer();
+//          AppiumDriverLocalService localServer = new AppiumServerHelper().startAppiumServer();
           AppiumServiceBuilder remoteServer = new AppiumServerHelper().startAppiumServiceBuilder();
           if (platformName.equalsIgnoreCase("android")){
               UiAutomator2Options options = new CapabilityHelper().configureCapabilityOptions();
@@ -22,7 +22,7 @@ public class EmulatorDriverFactory  implements AppiumDriverFactory {
           } else{
               //TODO remove
               UiAutomator2Options options = new CapabilityHelper().configureCapabilityOptions();
-              return new AndroidDriver( options);
+              return new AndroidDriver(remoteServer, options);
           }
           throw new IllegalArgumentException("Unsupported platform type: " + platformName);
       }

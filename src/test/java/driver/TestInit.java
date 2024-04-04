@@ -72,6 +72,6 @@ public class TestInit {
 
     public static void tearDown() {
         driver.quit();
-        AppiumServerHelper.shutDownServer();
+//        AppiumServerHelper.shutDownServer();
     }
 }
