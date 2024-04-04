@@ -28,7 +28,7 @@ public class CapabilityHelper {
         options.setCapability("platformName", PLATFORM_NAME);
         options.setCapability("appPackage", APP_PACKAGE);
         options.setCapability("appActivity", APP_ACTIVITY);
-        options.setCapability("automationName", "Flutter");
+//        options.setCapability("automationName", "Flutter");
         options.setCapability("app", appiumChallengeApk);
         return options;
     }
