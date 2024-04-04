@@ -13,6 +13,11 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
 
+      - name: setup Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version-file: '.nvmrc'
+
       - name: pull the project into the runner
         uses: actions/checkout@v3
       - name: setup appium
@@ -26,9 +31,3 @@ jobs:
         with:
           api-level: 29
           script: mvn test -DxmlFilePath=TestNG
-      - name: Save server output
-          if: ${{ always() }}
-          uses: actions/upload-artifact@master
-          with:
-            name: appium-api${{ matrix.apiLevel }}
-            path: appium.log

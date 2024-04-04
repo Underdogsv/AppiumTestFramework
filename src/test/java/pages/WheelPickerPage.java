@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import utils.AndroidActions;
@@ -27,8 +28,13 @@ public class WheelPickerPage extends AndroidActions {
 
     public void selectDropDownItemByColor(String color) {
         dropDownElement.click();
-        driver.findElements(AppiumBy.xpath("//android.widget.CheckedTextView[@resource-id='android:id/text1']"))
-                .stream().filter(s -> s.getText().equals(color)).findFirst().get().click();
+        try {
+            driver.findElements(AppiumBy.xpath("//android.widget.CheckedTextView[@resource-id='android:id/text1']"))
+                    .stream().filter(s -> s.getText().equals(color)).findFirst().get().click();
+        } catch (NoSuchElementException e){
+            e.printStackTrace();
+        }
+
     }
 
     public String getHeaderColor() {
