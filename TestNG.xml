@@ -7,9 +7,4 @@
             <class name="runner.FailedTestRunner"/>
         </classes>
     </test>
-<!--    <test  name="Rerun failed tests">-->
-<!--        <classes>-->
-<!--            <class name="runner.FailedTestRunner"/>-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>

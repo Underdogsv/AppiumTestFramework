@@ -4,6 +4,8 @@ import config.ConfigReader;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.AutomationName;
+import io.appium.java_client.remote.MobileCapabilityType;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class CapabilityHelper {
@@ -25,15 +27,24 @@ public class CapabilityHelper {
         APP_PACKAGE = System.getProperty("appPackage") != null ? System.getProperty("appPackage") : APP_PACKAGE;
         APP_ACTIVITY = System.getProperty("appActivity") != null ? System.getProperty("appActivity") : APP_ACTIVITY;
 
-        options.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
-        options.setCapability("deviceName", DEVICE_NAME);
-        options.setCapability("platformName", PLATFORM_NAME);
-//        options.setCapability("platformName", "ANDROID");
+//        options.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
+//        options.setCapability(MobileCapabilityType.DEVICE_NAME, DEVICE_NAME);
+//        options.setCapability(MobileCapabilityType.PLATFORM_NAME, PLATFORM_NAME);
+//        options.setCapability("appPackage", APP_PACKAGE);
+//        options.setCapability("appActivity", APP_ACTIVITY);
+//        options.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
+//        options.setCapability(MobileCapabilityType.APP, appiumChallengeApk);
+
+
+        options.setCapability(MobileCapabilityType.PLATFORM_NAME, PLATFORM_NAME);
+        options.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
         options.setCapability("appPackage", APP_PACKAGE);
         options.setCapability("appActivity", APP_ACTIVITY);
-        options.setCapability("automationName", AutomationName.ANDROID_UIAUTOMATOR2);
-
+        options.setCapability(MobileCapabilityType.APP, appiumChallengeApk);
         options.setCapability("app", appiumChallengeApk);
+
+
+
         return options;
     }
 
