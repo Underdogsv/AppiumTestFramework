@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v3
       - name: setup appium
         run: |
-          npm install -g appium@2.5.1
+          npm install -g appium@2.4.1
           appium -v
           appium &>/dev/null &
           appium driver install uiautomator2
