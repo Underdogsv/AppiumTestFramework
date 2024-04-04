@@ -35,6 +35,6 @@ and set some configuration variable (e.g deviceName, IP-address, port,):
 - mvn clean test -DipAddress={your address}
 
 After execution of the scripts framework will provide you cucumber report in ease to understand view:
-https://reports.cucumber.io/reports/5b73823d-dd65-4ee5-95b2-8abb02131d00
+https://reports.cucumber.io/reports/1b44fcda-5233-4a0c-be3e-da023f48b3a5
 
 
