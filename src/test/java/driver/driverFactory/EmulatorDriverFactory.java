@@ -17,7 +17,12 @@ public class EmulatorDriverFactory  implements AppiumDriverFactory {
               return new AndroidDriver(localServer.getUrl(), options);
           }else if (platformName.equalsIgnoreCase("iOs")){
               //    returns IOs driver if it will be implemented
-          }  throw new IllegalArgumentException("Unsupported platform type: " + platformName);
+          } else{
+              //TODO remove
+              UiAutomator2Options options = new CapabilityHelper().configureCapabilityOptions();
+              return new AndroidDriver(localServer.getUrl(), options);
+          }
+          throw new IllegalArgumentException("Unsupported platform type: " + platformName);
       }
 }
 
