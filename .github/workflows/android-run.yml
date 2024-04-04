@@ -4,7 +4,7 @@ on: push
 
 jobs:
   run-mobile-tests:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: setup java
@@ -21,6 +21,13 @@ jobs:
           npm install -g appium@2.0.0
           appium -v
           appium &>/dev/null &
+
+      - name: Appium Test version 2
+          steps:
+      - name: Checkout
+          uses: actions/checkout@v2
+      - name: Install and Run Appium Server
+          uses: moatazeldebsy/appium-server-gitHub-action@V1.0.4
 
       - name: run Appium tests
         uses: reactivecircus/android-emulator-runner@v2
