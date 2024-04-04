@@ -1,7 +1,6 @@
 package driver;
 
 import com.google.common.collect.ImmutableMap;
-//import io.appium.java_client.AppiumDriver;
 import helper.AppiumServerHelper;
 import driver.driverFactory.AppiumDriverFactory;
 import driver.driverFactory.AppiumDriverFactoryProvider;
@@ -72,6 +71,6 @@ public class TestInit {
 
     public static void tearDown() {
         driver.quit();
-//        AppiumServerHelper.shutDownServer();
+        AppiumServerHelper.shutDownServer();
     }
 }

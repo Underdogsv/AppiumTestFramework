@@ -21,10 +21,13 @@ Technologies/Tools used in building the framework
 - TestNG - Unit testing framework
 - Log4J - Logging framework
 - Cucumber Report 
+- Extend Cucumber Report
 - JSON - Test Data
 - Gson - Convert Java Objects into their JSON
+- GitHub Actions - CI/CD
 - GitHub - Version control
 - JavaFaker - test data generation
+
   
 Design patterns used in the framework
 =================================================
@@ -46,4 +49,10 @@ and set some configuration variable (e.g deviceName, IP-address, port,):
 After execution of the scripts framework will provide you cucumber report in ease to understand view:
 https://reports.cucumber.io/reports/1b44fcda-5233-4a0c-be3e-da023f48b3a5
 
+[Cucumber report](images/CucumberReport.PNG)
 
+Also after local running you can go to the ExtentReports folder and check extended report
+
+[Example of test result](images/ExtentReport1.png)
+
+[Example of screenshot from failed step](images/ExtentReportw.png)

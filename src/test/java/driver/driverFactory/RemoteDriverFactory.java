@@ -1,26 +1,26 @@
 package driver.driverFactory;
 
 import config.ConfigReader;
-import helper.AppiumServerHelper;
 import helper.CapabilityHelper;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.service.local.AppiumServiceBuilder;
 import lombok.SneakyThrows;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class RealDeviceDriverFactory implements AppiumDriverFactory {
+import java.net.URL;
+
+public class RemoteDriverFactory  implements AppiumDriverFactory {
 
     @SneakyThrows
     public AppiumDriver createDriver(){
         String platformName = ConfigReader.emulatorConfig.platformName();
-        String deviceType = ConfigReader.emulatorConfig.deviceType();
-        AppiumServiceBuilder remoteServer = new AppiumServerHelper().startAppiumServiceBuilder();
+        String remoteURL = ConfigReader.emulatorConfig.remoteURL();
         DesiredCapabilities options = new CapabilityHelper().getDesiredCapabilitiesOptions();
         if (platformName.equalsIgnoreCase("android")){
-              return new AndroidDriver(remoteServer, options);
+            return new AndroidDriver(new URL(remoteURL), options);
         }else if (platformName.equalsIgnoreCase("iOs")){
             //    returns IOs driver if it will be implemented
-        }  throw new IllegalArgumentException("Unsupported device type: " + deviceType);
+        }
+        throw new IllegalArgumentException("Unsupported platform type: " + platformName);
     }
 }

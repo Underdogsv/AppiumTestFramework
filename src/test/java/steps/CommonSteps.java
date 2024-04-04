@@ -2,10 +2,13 @@ package steps;
 
 import driver.TestInit;
 import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class CommonSteps extends TestInit{
     private static final Logger logger = LogManager.getLogger(CommonSteps.class);
@@ -27,7 +30,12 @@ public class CommonSteps extends TestInit{
     }
 
      @After
-    public static void performAfterSuit() {
-        tearDown();
+    public static void performAfterSuit(Scenario scenario) {
+         //validate if scenario has failed
+         if(scenario.isFailed()) {
+             final byte[] screenshot = driver.getScreenshotAs(OutputType.BYTES);
+             scenario.attach(screenshot, "image/png", scenario.getName());
+         }
+         tearDown();
     }
 }

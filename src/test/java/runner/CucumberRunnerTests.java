@@ -4,6 +4,6 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(tags = "not @disabled", features = {"src/test/resources/features"}, glue = {"steps"},
-        plugin = {"rerun:target/failedrerun.txt"})
+        plugin = {"rerun:target/failedrerun.txt", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 public class CucumberRunnerTests extends AbstractTestNGCucumberTests {
 }
