@@ -10,8 +10,4 @@ import org.aeonbits.owner.Config;
 public interface ITestConfig extends Config {
       @Key("deviceHost")
     String deviceHost();
-
-    @Key("nodeJsPath")
-    String nodeJsPath();
-
 }
