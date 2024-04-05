@@ -1,4 +1,4 @@
-name: Run android tests in github runner
+name: Run android tests
 
 on:
   push:
@@ -55,4 +55,4 @@ jobs:
           force-avd-creation: false
           emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
-          script: mvn clean test -Pandroid
+          script: mvn clean test -DxmlFilePath=TestNG
