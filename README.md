@@ -55,4 +55,4 @@ Also after local running you can go to the ExtentReports folder and check extend
 
 [Example of test result](images/ExtentReport1.png)
 
-[Example of screenshot from failed step](images/ExtentReportw.png)
+[Example of screenshot from failed step](images/ExtentReport2.png)
