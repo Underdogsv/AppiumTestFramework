@@ -53,14 +53,17 @@ public class LoginPage extends AndroidActions {
     }
 
     public String getUsernameBackgroundValue() {
+        wait.until(ExpectedConditions.visibilityOf(usernameField));
         return usernameField.getAttribute("content-desc");
     }
 
     public String getPasswordBackgroundValue() {
+        wait.until(ExpectedConditions.visibilityOf(passwordField));
         return passwordField.getAttribute("content-desc");
     }
 
     public String getLoginButtonText() {
+        wait.until(ExpectedConditions.visibilityOf(logInButton));
         return logInButton.findElement(AppiumBy.xpath("//android.widget.TextView")).getText();
     }
 
