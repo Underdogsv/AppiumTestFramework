@@ -3,6 +3,7 @@ package helper;
 import config.ConfigReader;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import lombok.SneakyThrows;
 
 import java.io.File;
 
@@ -40,7 +41,10 @@ public class AppiumServerHelper {
         localService.stop();
     }
 
+    @SneakyThrows
     public static void shutDownServer(){
-        service.build().stop();
+        if (service != null) {
+            service.build().stop();
+        }
     }
 }

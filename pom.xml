@@ -12,9 +12,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-<!--        <surefire.version>2.19.1</surefire.version>-->
-<!--        <surefire.plugin.version>3.0.0-M5</surefire.plugin.version>-->
-<!--        <config.file>default</config.file>-->
         <extentreports.cucumber7.adapter.version>1.14.0</extentreports.cucumber7.adapter.version>
         <extentreports.version>5.1.1</extentreports.version>
         <testng.version>7.7.1</testng.version>
@@ -26,27 +23,21 @@
     </properties>
 
     <dependencies>
-
-
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
         </dependency>
-
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
             <version>${appium.java.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
         </dependency>
-
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -88,11 +79,6 @@
             <artifactId>selenium-remote-driver</artifactId>
             <version>4.13.0</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>io.qameta.allure</groupId>-->
-<!--            <artifactId>allure-selenide</artifactId>-->
-<!--            <version>2.20.1</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>org.aeonbits.owner</groupId>
             <artifactId>owner</artifactId>
@@ -129,13 +115,6 @@
             <version>7.15.0</version>
             <scope>test</scope>
         </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>io.cucumber</groupId>-->
-<!--            <artifactId>cucumber-junit</artifactId>-->
-<!--            <version>7.15.0</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit-platform-engine</artifactId>
@@ -158,7 +137,6 @@
             <version>${extentreports.cucumber7.adapter.version}</version>
         </dependency>
     </dependencies>
-
 
     <build>
         <plugins>
